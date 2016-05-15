@@ -3,19 +3,18 @@ package net.parallel.jb.aula1;
 //modificador de acesso|tipo de estrutura|nome da estrutura
 public class Exe01 {
 	
-	//DeclaraÁ„o de Var·veis
+	//Declara√ß√£o de Var√°veis
 	//Tipo | Nome
 	static String valorImpresso;
 		
-	//Modificador de acesso|tipo de retorno|nome do mÈtodo|parametros
+	//Modificador de acesso|tipo de retorno|nome do m√©todo|parametros
 	public static void main(String [] args){
 		
-		//AtribuiÁ„o de Vari·veis
-		//Vari·vel | Valor
+		//Atribui√ß√£o de Vari√°veis
+		//Vari√°vel | Valor
 		Exe01.valorImpresso = "Luiz Carvalho";
 		
-		//Bloco de instruÁıes.
-		//MÈtodo da classe out do pacote System.
+		//Bloco de instru√ß√µes.
 		System.out.println(Exe01.valorImpresso);
 		
 		//EX02
