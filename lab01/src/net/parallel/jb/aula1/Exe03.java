@@ -10,24 +10,27 @@ public class Exe03 {
 	
 	public float calcula(){
 		
-		int opt  =0;
-		if(opcao == "soma")
-			 opt = 1;
-		else 
-			if(opcao == "multiplicacao")
-				opt = 2;
-			
-		
 		float resultado = 0;
+		
 		Exe02 calc = new Exe02(8,5);
-		switch(opt){
-		case 1 : {
+		switch(opcao){
+		case "soma" : {
 			resultado = calc.soma();
 			System.out.println(opcao);
 		}
 		break;
-		case 2 : {
+		case "multiplicação" : {
 			resultado = calc.multiplicacao();
+			System.out.println(opcao);
+		}
+		break;
+		case "subtração" : {
+			resultado = calc.subtracao();
+			System.out.println(opcao);
+		}
+		break;
+		case "divisão" : {
+			resultado = calc.divisao();
 			System.out.println(opcao);
 		}
 		break;
