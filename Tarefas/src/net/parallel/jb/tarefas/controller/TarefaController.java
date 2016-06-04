@@ -28,5 +28,28 @@ public void loadFromFile() {
 		}
 	}
 
-	public void saveToFile() {
+public void saveToFile() {
+		try {
+			BufferedWriter writer = null;
+			String lineSep = System.getProperty("line.separator");
+			try {
+
+				writer = new BufferedWriter(new FileWriter("Tarefas.txt", 
+						false));
+
+				for (Tarefa obj : repositorio) {
+					writer.write(obj.getTitulo() + "|" + obj.getDescricao()
+					+ lineSep);
+				}
+			} finally {
+				if (writer != null) {
+					writer.close();
+				}
+			}
+		} catch (FileNotFoundException fnf) {
+			fnf.printStackTrace();
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		}
+	}
 }
