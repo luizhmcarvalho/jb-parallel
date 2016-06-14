@@ -28,9 +28,20 @@ public abstract class AController<T extends IModel>
 
 	@Override
 	public void delete(T obj) {
-		
-		int index = repositorio.indexOf(obj);
-		repositorio.remove(index);
+		if(obj == null)
+			return;
+		try{
+			int index = repositorio.indexOf(obj);
+			repositorio.remove(index);
+		}
+		catch(Exception ex){
+			
+			if(ex.getMessage().equals("-1"))
+				System.out.println("O item não está presente no repositório");
+			else
+				System.out.println(ex.getMessage());
+			
+		}
 		
 	}
 

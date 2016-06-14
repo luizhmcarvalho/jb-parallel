@@ -1,4 +1,5 @@
 package net.parallel.jb.tarefas.controller;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -9,8 +10,9 @@ import java.io.IOException;
 import net.parallel.jb.tarefas.model.Tarefa;
 
 public class TarefaController extends AController<Tarefa> {
-public void loadFromFile() {
-		String fileName = "Tarefas.txt";
+
+	public void loadFromFile() {
+		String fileName = "C:\\parallel\\workspace\\javabasico\\Tarefas.txt";
 		try {
 
 			repositorio.clear();
@@ -28,19 +30,20 @@ public void loadFromFile() {
 		}
 	}
 
-public void saveToFile() {
+	public void saveToFile() {
 		try {
 			BufferedWriter writer = null;
 			String lineSep = System.getProperty("line.separator");
 			try {
 
-				writer = new BufferedWriter(new FileWriter("Tarefas.txt", 
+				writer = new BufferedWriter(new FileWriter("C:\\parallel\\workspace\\javabasico\\Tarefas.txt", 
 						false));
 
 				for (Tarefa obj : repositorio) {
 					writer.write(obj.getTitulo() + "|" + obj.getDescricao()
 					+ lineSep);
 				}
+		writer.flush();
 			} finally {
 				if (writer != null) {
 					writer.close();
